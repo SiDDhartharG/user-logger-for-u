@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json());
 
-app.get("/", (_, res) => { res.send("Hello World!") });
+// app.get("/", (_, res) => { res.send("Hello World!") });
 
 app.use("/api/user", userRoutes);
 app.use("/api/table", tableRouter);
