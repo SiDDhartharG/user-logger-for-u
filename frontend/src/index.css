@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #dff6ff, #d5f0ff, #ceeaff, #c8e4ff, #c4ddff);
+  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -19,16 +19,15 @@ code {
   margin-top: 100px;
   margin: -1px;
 }
-.landing-div{
-  width:50%;
-  height:auto;
+.landing-div {
+  width: 50%;
+  height: auto;
   margin: auto;
   padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
 }
 .landing-div-header {
   height: 30%;
@@ -60,22 +59,20 @@ code {
   margin: auto;
 }
 
-@media(max-width:480px)
-{
-  .landing-div{
-    width:80%;
-    height:500px;
+@media (max-width: 480px) {
+  .landing-div {
+    width: 80%;
+    height: 500px;
     display: block;
     align-items: center;
   }
-  .landing-div-footer{
-    height:150px;
+  .landing-div-footer {
+    height: 150px;
     margin: 50px auto;
     display: block;
     align-items: center;
   }
 }
-
 
 /* login-signup*/
 .login-signup {
@@ -94,7 +91,6 @@ code {
   height: 60%;
   margin: auto;
 }
-
 
 .alert {
   padding: 10px;
@@ -254,9 +250,3 @@ code {
   width: 40%;
 }
 
-.footer{
-  position: absolute;
-  bottom:10px;
-  margin-top: 30px;
-  left: 40%;
-}
