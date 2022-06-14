@@ -23,7 +23,7 @@ const Header = (props) => {
         }}
       >
         <div className="nav-left" onClick={handleClick}>
-          <span style={{ fontSize: "30px", cursor: "pointer" }}>UserLogs</span>
+          <span style={{ fontSize: "30px", cursor: "pointer" }}>User Logger For U</span>
         </div>
         <div
           className="nav-right"
