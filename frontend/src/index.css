@@ -14,13 +14,22 @@ code {
 
 /*Landing page*/
 .landing-page {
-  width: 80%;
-  height: 500px;
+  height: 100vh;
   margin-top: 100px;
-  margin: auto;
-  /* //background-image: linear-gradient(to right top, #dff6ff, #bae7fd, #95d7fd, #70c7fe, #47b5ff); */
+  margin: -1px;
+  background-image: linear-gradient(to right, #dff6ff, #d5f0ff, #ceeaff, #c8e4ff, #c4ddff);
 }
+.landing-div{
+  width:50%;
+  height:auto;
+  margin: auto;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
+}
 .landing-div-header {
   height: 30%;
   text-align: center;
@@ -50,6 +59,23 @@ code {
   height: 40px;
   margin: auto;
 }
+
+@media(max-width:480px)
+{
+  .landing-div{
+    width:80%;
+    height:500px;
+    display: block;
+    align-items: center;
+  }
+  .landing-div-footer{
+    height:150px;
+    margin: 50px auto;
+    display: block;
+    align-items: center;
+  }
+}
+
 
 /* login-signup*/
 .login-signup {
@@ -227,3 +253,4 @@ code {
 .filter-row-entity-name {
   width: 40%;
 }
+
