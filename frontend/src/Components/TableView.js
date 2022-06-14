@@ -108,7 +108,7 @@ function TableView() {
   return (
     <div>
       <div className="filter">
-        <div className="search-bar">
+        <div className="search-bar" style={{ boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px" }}>
           <SearchIcon style={{ marginLeft: "10px" }} />
           {
             categorySearch === "dob" ?

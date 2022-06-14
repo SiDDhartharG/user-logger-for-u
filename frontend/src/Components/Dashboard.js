@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { GetTablesFromToken } from "../Utils/token";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Dashboard(props) {
+function Dashboard() {
   const navigate = useNavigate();
   const [searchProperties, setSearchProperties] = useState("");
+  const [change, setChange] = useState(true)
   function handleAddClick(e) {
     e.preventDefault();
     navigate("/create-table");
@@ -20,22 +21,19 @@ function Dashboard(props) {
   }
   return (
     <div className="dashboard">
-      <div className="search-bar">
+      <div className="search-bar" style={{ boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px" }}>
         <SearchIcon style={{ marginLeft: "10px" }} />
-        <input
-          type="text"
-          name="tablename"
-          value={searchProperties.searchText}
-          placeholder="Enter Name of Table to search"
-          onChange={handleSearchChange}
+        <input type="text" name="tablename" value={searchProperties.searchText}
+          placeholder="Enter Name of Table to search" onChange={handleSearchChange}
         ></input>
       </div>
 
       <div className="table-list">
         {filterTable(GetTablesFromToken()).map((tableName) => {
-          return <TableCard tableName={tableName} />;
+          return <TableCard tableName={tableName} change={change} setChange={setChange} />;
         })}
         <TableCard
+          showDelete={false}
           showIcon={false}
           tableName={
             <div className="add" onClick={handleAddClick}>

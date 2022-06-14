@@ -14,6 +14,9 @@ const API = {
   addTable: async (payload) => {
     return await protectedAxios.post(`/api/table/${payload}`)
   },
+  deleteTable: async (payload = "") => {
+    return await protectedAxios.delete(`/api/table/${payload}`)
+  },
   addEntity: async (payload) => {
     return await protectedAxios.post(`/api/entity`, payload)
   },
