@@ -1,10 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./config/db.js";
+import connectDB from "./backend/config/db.js";
 import path from 'path'
-import userRoutes from "./router/userRouter.js";
-import tableRouter from "./router/tableRouter.js";
-import entityRouter from './router/entityRouter.js'
+import userRoutes from "./backend/router/userRouter.js";
+import tableRouter from "./backend/router/tableRouter.js";
+import entityRouter from './backend/router/entityRouter.js'
 import cors from "cors";
 import morgan from 'morgan'
 dotenv.config();
