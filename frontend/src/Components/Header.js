@@ -8,7 +8,7 @@ const Header = (props) => {
     navigate("/home");
   };
   const handleLogout = () => {
-    
+
     localStorage.removeItem('token');
     navigate('/');
   };
@@ -29,14 +29,14 @@ const Header = (props) => {
           className="nav-right"
           style={{ alignItems: "center", justifyContent: "flex-end" }}
         >
-          <span style={{ fontSize: "15px" }}>
+          <span style={{ fontSize: "15px", display: "flex", alignItems: "center" }}>
             <AccountCircleIcon />
             {GetUserNameFromToken()}&nbsp;&nbsp;&nbsp;
           </span>
           <divn onClick={handleLogout}>
             <span
               style={{
-                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                boxShadow: "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
                 padding: "5px",
               }}
               onCLick={handleLogout}
