@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import API from "../Api/api";
-
+import { Grid } from "@mui/material";
 function TableCard({ tableName, showIcon = true, showDelete = true, change, setChange }) {
   const onClickDeleteButton = async () => {
     const response = await API.deleteTable(tableName)
@@ -13,7 +13,7 @@ function TableCard({ tableName, showIcon = true, showDelete = true, change, setC
     }
   }
   return (
-    <div class="card" style={{ height: "100px", width: "18rem", display: "flex", placeContent: "center", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
+    <Grid class="card" style={{ height: "100px", width: "18rem", display: "flex", placeContent: "center", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
       {showDelete && <div style={{ textAlign: "right", marginRight: "10px" }}>
         <DeleteOutlineIcon color="error" style={{ cursor: "pointer" }} onClick={onClickDeleteButton} />
       </div>}
@@ -22,7 +22,7 @@ function TableCard({ tableName, showIcon = true, showDelete = true, change, setC
           <h5 class="card-title" style={{ display: "flex", justifyContent: "center" }}>{tableName}&nbsp;&nbsp;{showIcon && <ArrowForwardIosIcon />}</h5>
         </div>
       </Link>
-    </div>
+    </Grid>
   );
 }
 

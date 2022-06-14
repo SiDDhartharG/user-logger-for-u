@@ -27,8 +27,8 @@ function Landing(props) {
       <div className="landing-page">
         <div className="landing-div">
           <div className="landing-div-header">
-            <h1>UserLogs</h1>
-            <p>Welcome to UserLogs</p>
+            <p>Welcome to</p>
+            <h2>UserLogger For U</h2>
           </div>
           <div className="landing-div-footer">
             <Grid
@@ -36,17 +36,16 @@ function Landing(props) {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
-                width: "60%",
                 height: "100%",
                 margin: "auto",
               }}
               container
               spacing={4}
             >
-              <Grid item xs={4} >
+              <Grid item sm={6} xs={12} >
                 <Button variant="contained" color="success" startIcon={<LoginIcon />} onClick={handleLoginCLick}>Login</Button>
               </Grid>
-              <Grid item xs={4} >
+              <Grid item sm={6} xs={12} >
                 <Button variant="outlined" color="success" startIcon={<HowToRegIcon />} onClick={handleSigninCLick}>Signup</Button>
               </Grid>
             </Grid>

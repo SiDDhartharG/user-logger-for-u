@@ -4,7 +4,7 @@ import { TableCard } from "./";
 import { useNavigate } from "react-router-dom";
 import { GetTablesFromToken } from "../Utils/token";
 import SearchIcon from "@mui/icons-material/Search";
-
+import { Grid } from "@mui/material";
 function Dashboard() {
   const navigate = useNavigate();
   const [searchProperties, setSearchProperties] = useState("");
@@ -28,7 +28,7 @@ function Dashboard() {
         ></input>
       </div>
 
-      <div className="table-list">
+      <Grid container className="table-list">
         {filterTable(GetTablesFromToken()).map((tableName) => {
           return <TableCard tableName={tableName} change={change} setChange={setChange} />;
         })}
@@ -42,7 +42,7 @@ function Dashboard() {
             </div>
           }
         />
-      </div>
+      </Grid>
     </div>
   );
 }
