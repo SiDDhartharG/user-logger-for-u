@@ -15,6 +15,10 @@ function Login() {
     email: "",
     password: "",
   });
+  const [error,setError]=useState({
+    isError:false,
+    errorMessage:""
+  })
   function handleChange(event) {
     const { name, value } = event.target;
     setUserDetails({
@@ -31,12 +35,25 @@ function Login() {
       navigate("/home");
       return;
     }
+    else
+    {
+      setError({
+        isError:true,
+        errorMessage:response.data.error
+      })
+        setTimeout(()=>{setError({
+          isError:false,
+          errorMessage:""
+        })},3000)
+
+    }
   };
   return (
     <div className="login-signup">
       <div className="header">
         <h1>Login</h1>
       </div>
+      {error.isError && <div className="alert error-dailog">{error.errorMessage}</div>} 
       <div className="login-signup-form">
         <div className="form-group">
           <label for="exampleInputEmail1">Email address</label>

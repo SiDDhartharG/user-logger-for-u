@@ -33,6 +33,9 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (email === "" || password === "") {
+      throw new Error("Fill All details");
+    }
     const user = await User.findOne({ email });
     if (user && (await user.matchPassword(password))) {
       res

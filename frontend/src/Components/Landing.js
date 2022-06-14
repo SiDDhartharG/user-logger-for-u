@@ -23,7 +23,8 @@ function Landing(props) {
   }
 
   return (
-    <div style={{ marginTop: "180px" }}>
+    <div>
+      <div style={{ marginTop: "180px" }}>
       <div className="landing-page">
         <div className="landing-div">
           <div className="landing-div-header">
@@ -52,6 +53,7 @@ function Landing(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

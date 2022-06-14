@@ -16,6 +16,10 @@ function Signup() {
     password: "",
     confirm_password: "",
   });
+  const [error,setError]=useState({
+    isError:false,
+    errorMessage:""
+  })
   function handleChange(event) {
     const { name, value } = event.target;
     setUserDetails({
@@ -25,8 +29,20 @@ function Signup() {
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    
     const { name, email, password, confirm_password } = userDetails;
+    if(name===""&&password===""&&email===""&&confirm_password==="")
+    {
+      setError({
+        isError:true,
+        errorMessage:"fill all the details"
+      })
+        setTimeout(()=>{setError({
+          isError:false,
+          errorMessage:""
+        })},3000)
+        return ;
+    }
     if ((name, email && password === confirm_password)) {
       const response = await API.signup({ name, email, password });
       if (response.status === 201) {
@@ -34,16 +50,25 @@ function Signup() {
         navigate("/home");
         return;
       }
-    } else {
-      // ::ERROR
-      console.log("password and confirmpassword dont match");
+      else
+    { 
+      setError({
+        isError:true,
+        errorMessage:response.data.error
+      })
+        setTimeout(()=>{setError({
+          isError:false,
+          errorMessage:""
+        })},3000)
     }
+    } 
   };
   return (
     <div className="login-signup">
       <div className="header">
         <h1>Signup</h1>
       </div>
+       {error.isError && <div className="alert error-dailog">{error.errorMessage}</div>}
       <div className="login-signup-form">
         <div className="form-group">
           <label for="name">Name</label>

@@ -5,11 +5,26 @@ interceptor.responseInterceptor();
 const API = {
   login: async (payload) => {
     const loginApi = "/api/user/login";
-    return await publicAxios.post(loginApi, payload);
+    try{
+    const response=await publicAxios.post(loginApi, payload);
+    return response;
+    }
+    catch(error)
+    { 
+      console.log(error);
+      return error.response;
+    }
   },
   signup: async (payload) => {
     const signupApi = "/api/user/signup";
-    return await publicAxios.post(signupApi, payload);
+    try{
+    const response=await publicAxios.post(signupApi, payload);
+    return response;
+    }
+    catch(error)
+    { 
+      return error.response;
+    }
   },
   addTable: async (payload) => {
     return await protectedAxios.post(`/api/table/${payload}`)
