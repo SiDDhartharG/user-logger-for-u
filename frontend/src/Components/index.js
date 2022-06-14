@@ -7,4 +7,5 @@ import TableCard from "./TableCard";
 import TableView from "./TableView";
 import CreateTable from "./CreateTable";
 import Navbar from "./Navbar";
-export { Home, Login, Signup, Dashboard, Landing,TableCard ,TableView ,CreateTable ,Navbar };
+import Footer from "./Footer";
+export { Home, Login, Signup, Dashboard, Landing,TableCard ,TableView ,CreateTable ,Navbar,Footer };

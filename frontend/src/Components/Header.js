@@ -39,7 +39,7 @@ const Header = (props) => {
             {GetUserNameFromToken()}&nbsp;&nbsp;&nbsp;
           </span>
           <div onClick={handleLogout}>
-            <Button style={{ width:"auto"}} endIcon={<LogoutIcon/>}>
+            <Button style={{ width:"auto",color:"black"}} endIcon={<LogoutIcon/>}>
               Logout
             </Button>
             &nbsp;&nbsp;
